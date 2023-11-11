@@ -2,7 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import {
-  HomePage, QueryGet
+  BoardContentPage,
+  CreatePost,
+  HomePage, QueryGet,
+  QueryGetPagination
 } from './pages';
 
 import './styles/tailwind.css';
@@ -22,9 +25,13 @@ const routerApp = (
         <Route path='/react-query'>
           {/* 하위는 그냥 이렇게 만들어주면 됨. get 이라고 적은 경우, /react-query/get 이라는 주소가 됨. */}
           <Route path='get' element={<QueryGet />} />
-          {/* <Route path='/post' />
-          <Route path='/patch' />
-          <Route path='/delete' /> */}
+          <Route path='get-pagination' element={<QueryGetPagination />} />
+          <Route path='post' element={<CreatePost />} />
+          {/* <Route path='patch' />
+          <Route path='delete' /> */}
+        </Route>
+        <Route path='/posts'>
+          <Route path=':id' element={<BoardContentPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

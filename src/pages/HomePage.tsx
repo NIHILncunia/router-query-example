@@ -17,10 +17,8 @@ export function HomePage() {
         <div css={style.default}>
           {/* 링크 컴포넌트는 리액트 라우터의 모든 링크에 사용됨. href 대신에 to가 있고
            to에 주소를 넣으면 됨. */}
-          <Link to='/react-query/get'>GET 예시</Link>
-          <Link to='/react-query/post'>POST 예시</Link>
-          <Link to='/react-query/patch'>PATCH 예시</Link>
-          <Link to='/react-query/delete'>DELETE 예시</Link>
+          <Link to='/react-query/get'>글목록</Link>
+          <Link to='/react-query/get-pagination'>글목록(페이지네이션)</Link>
         </div>
       </AppLayout>
     </>
